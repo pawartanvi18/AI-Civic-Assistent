@@ -1,0 +1,21 @@
+# STARTER ENTRIES: NOT VERIFIED. Before relying on any of these, open the site,
+# confirm it is the official one, check robots.txt and terms of use, and only
+# then set verified: true. Add real topic-specific paths from your source inventory.
+sources:
+  - id: bmc_main_site
+    name: MCGM / BMC official website
+    host: www.mcgm.gov.in
+    path_prefixes: ["/"]
+    topics: ["*"]
+    languages: [en, mr]
+    verified: false
+    notes: "TO VERIFY: host name, robots.txt, terms of use."
+
+  - id: bmc_portal
+    name: MCGM / BMC portal
+    host: portal.mcgm.gov.in
+    path_prefixes: ["/"]
+    topics: ["*"]
+    languages: [en, mr]
+    verified: false
+    notes: "TO VERIFY: that this host is currently official and what it serves."

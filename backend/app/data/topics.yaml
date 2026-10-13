@@ -1,0 +1,35 @@
+topics:
+  - id: solid_waste
+    name: Solid waste / garbage collection
+    description: Garbage collection, segregation rules, bulk waste, missed pickups.
+    keywords: [garbage, waste, trash, dustbin, collection, segregation, dumping]
+    example_questions:
+      - How do I report garbage that has not been collected?
+
+  - id: roads_potholes
+    name: Roads and potholes
+    description: Pothole reporting and road repair information.
+    keywords: [pothole, road, footpath, pavement, repair, crater]
+    example_questions:
+      - How can I report a pothole on my street?
+
+  - id: drainage
+    name: Drainage
+    description: Blocked drains, stormwater drains, waterlogging.
+    keywords: [drain, drainage, gutter, sewer, waterlogging, overflow, manhole]
+    example_questions:
+      - Who do I contact about a blocked drain?
+
+  - id: water_supply
+    name: Water supply
+    description: Water supply issues, low pressure, contamination, billing basics.
+    keywords: [water, supply, tap, pressure, leakage, contaminated, pipeline]
+    example_questions:
+      - What can I do if my area has no water supply?
+
+  - id: streetlights
+    name: Streetlights
+    description: Non-working or damaged streetlights.
+    keywords: [streetlight, street light, lamp, pole, dark, lighting]
+    example_questions:
+      - How do I report a broken streetlight?

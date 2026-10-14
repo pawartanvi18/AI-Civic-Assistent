@@ -8,7 +8,7 @@ class MetaResponse(BaseModel):
     app_name: str
     version: str
     disclaimer: str
-    supported_languages: list["en", "mr", "hi"]
+    supported_languages: list[str]
 
 
 @router.get("/meta", response_model=MetaResponse)
@@ -18,5 +18,5 @@ def meta(request: Request) -> MetaResponse:
         app_name=s.app_name,
         version=s.app_version,
         disclaimer=s.disclaimer,
-        supported_languages=["en"],
+        supported_languages=["en", "mr", "hi"],
     )

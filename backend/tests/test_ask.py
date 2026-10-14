@@ -1,9 +1,6 @@
 import pytest
 from fastapi.testclient import TestClient
 
-from app.config import Settings
-from app.main import create_app
-
 
 def ask(client, question, language=None):
     body = {"question": question}
@@ -43,10 +40,10 @@ def test_state_service_marked(client):
     assert body["official_channel"] is None  # BMC helpline is not relevant
 
 
-def test_unverified_data_is_labelled(client):
-    body = ask(client, "Where can I get a birth certificate?").json()
-    assert body["services"][0]["verified"] is False
-    assert "not been checked" in body["answer"]
+# def test_unverified_data_is_labelled(client):
+#     body = ask(client, "Where can I get a birth certificate?").json()
+#     assert body["services"][0]["verified"] is False
+#     assert "not been checked" in body["answer"]
 
 
 @pytest.mark.parametrize(
@@ -71,14 +68,47 @@ def test_unsupported(client):
     assert body["status"] == "unsupported_topic"
     assert body["intent"] == "unsupported"
 
-
-def test_strict_mode_hides_unverified_entries():
-    app = create_app(Settings(_env_file=None, environment="test", allow_unverified_data=False))
+def test_unverified_data_is_labelled(make_app):
+    app = make_app(verified=False, allow_unverified=True)
     with TestClient(app, raise_server_exceptions=False) as c:
         body = ask(c, "Where can I get a birth certificate?").json()
-        assert body["status"] == "insufficient_evidence"
-        assert body["services"] == []
-        assert body["official_channel"] is None
+    assert body["status"] == "answered"
+    assert body["services"][0]["verified"] is False
+    assert "not been checked" in body["answer"]
+    assert body["official_channel"]["verified"] is False
+
+
+def test_verified_data_has_no_warning(make_app):
+    app = make_app(verified=True, allow_unverified=True)
+    with TestClient(app, raise_server_exceptions=False) as c:
+        body = ask(c, "Where can I get a birth certificate?").json()
+    assert body["services"][0]["verified"] is True
+    assert "not been checked" not in body["answer"]
+
+
+def test_strict_mode_hides_unverified_entries(make_app):
+    app = make_app(verified=False, allow_unverified=False)
+    with TestClient(app, raise_server_exceptions=False) as c:
+        body = ask(c, "Where can I get a birth certificate?").json()
+    assert body["status"] == "insufficient_evidence"
+    assert body["services"] == []
+    assert body["official_channel"] is None
+
+
+def test_strict_mode_still_serves_verified_entries(make_app):
+    app = make_app(verified=True, allow_unverified=False)
+    with TestClient(app, raise_server_exceptions=False) as c:
+        body = ask(c, "Where can I get a birth certificate?").json()
+    assert body["status"] == "answered"
+    assert body["services"][0]["verified"] is True
+    
+# def test_strict_mode_hides_unverified_entries():
+#     app = create_app(Settings(_env_file=None, environment="test", allow_unverified_data=False))
+#     with TestClient(app, raise_server_exceptions=False) as c:
+#         body = ask(c, "Where can I get a birth certificate?").json()
+#         assert body["status"] == "insufficient_evidence"
+#         assert body["services"] == []
+#         assert body["official_channel"] is None
 
 
 def test_disclaimer_is_localised(client):

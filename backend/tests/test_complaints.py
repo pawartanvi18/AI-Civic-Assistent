@@ -86,10 +86,12 @@ def test_draft_requires_location(client):
     assert r.json()["error"]["code"] == "validation_error"
 
 
-def test_strict_mode_draft_has_no_unverified_channel():
-    app = create_app(Settings(_env_file=None, environment="test", allow_unverified_data=False))
+def test_strict_mode_draft_has_no_unverified_channel(make_app):
+    app = make_app(verified=False, allow_unverified=False)
     with TestClient(app, raise_server_exceptions=False) as c:
-        body = draft(c, category_id="drainage", description="Blocked drain", location="Bandra").json()
-        assert body["channel"] is None
-        assert body["other_channels"] == []
-        assert len(body["next_steps"]) == 4
+        body = draft(
+            c, category_id="drainage", description="Blocked drain", location="Bandra"
+        ).json()
+    assert body["channel"] is None
+    assert body["other_channels"] == []
+    assert len(body["next_steps"]) == 4

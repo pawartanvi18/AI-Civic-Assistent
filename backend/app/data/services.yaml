@@ -1,0 +1,110 @@
+# No fees, documents or deadlines are stored here. Those may only come from
+# verified live sources (Milestone 5). Set verified: true + checked_on after
+# you manually confirm each entry.
+services:
+  - id: birth_death_certificate
+    topic: birth_death_certificates
+    name: Birth and death certificate (search, verification, issuance)
+    names:
+      mr: "जन्म व मृत्यू प्रमाणपत्र"
+      hi: "जन्म और मृत्यु प्रमाणपत्र"
+    authority: Public Health Department / Ward Medical Officer of Health (BMC)
+    jurisdiction: bmc
+    official_url: "https://portal.mcgm.gov.in/irj/portal/anonymous/qlhealth?guest_user=english"
+    source_id: bmc_portal
+    keywords: [birth, death, born, janm, mrityu, जन्म, मृत्यू, मृत्यु]
+    verified: true
+
+  - id: marriage_registration
+    topic: marriage_registration
+    name: Marriage registration (slot booking and certificate download)
+    names:
+      mr: "विवाह नोंदणी"
+      hi: "विवाह पंजीकरण"
+    authority: BMC Executive Health Officer / Ward Health Department
+    jurisdiction: bmc
+    official_url: "https://portal.mcgm.gov.in/irj/portal/anonymous/qlamregistration?guest_user=english"
+    source_id: bmc_portal
+    keywords: [marriage, married, wedding, vivah, लग्न, विवाह]
+    verified: true
+
+  - id: revenue_certificates
+    topic: revenue_certificates
+    name: Caste, income, domicile, non-creamy layer and solvency certificates
+    names:
+      mr: "जात, उत्पन्न, अधिवास व इतर दाखले"
+      hi: "जाति, आय, निवास और अन्य प्रमाणपत्र"
+    authority: Revenue Department, Government of Maharashtra (Aaple Sarkar)
+    jurisdiction: maharashtra
+    official_url: "https://aaplesarkar.mahaonline.gov.in/en"
+    source_id: aaple_sarkar
+    keywords: [caste, income certificate, domicile, nationality, creamy, solvency, "जातीचा दाखला", "जात प्रमाणपत्र", जाति, "उत्पन्नाचा दाखला", "उत्पन्न प्रमाणपत्र", "आय प्रमाण", अधिवास, डोमिसाइल]
+    verified: true
+
+  - id: property_tax
+    topic: property_tax
+    name: Property tax (assessment, payment, NOC, name mutation)
+    names:
+      mr: "मालमत्ता कर"
+      hi: "संपत्ति कर"
+    authority: BMC Assessment and Collection Department
+    jurisdiction: bmc
+    official_url: "https://portal.mcgm.gov.in/irj/portal/anonymous/qlOnPayment?guest_user=english"
+    source_id: bmc_portal
+    keywords: [property tax, house tax, tax bill, mutation, "sac code", "मालमत्ता कर", "संपत्ति कर", "संपत्ती कर"]
+    verified: true
+    notes: "SUSPECT: same URL as water_connection_bills. Find the correct page."
+
+  - id: water_connection_bills
+    topic: water_supply
+    name: Water connection, bill payment and meter repair
+    names:
+      mr: "पाणी जोडणी, बिल व मीटर"
+      hi: "पानी कनेक्शन, बिल और मीटर"
+    authority: BMC Hydraulic Engineer's Department
+    jurisdiction: bmc
+    official_url: "https://portal.mcgm.gov.in/irj/portal/anonymous/qlOnPayment?guest_user=english"
+    source_id: bmc_portal
+    keywords: ["water connection", "water bill", "water meter", "new connection", meter, "नळ जोडणी", "पाणी जोडणी", "पाणी बिल", "पाणी देयक", "नल कनेक्शन", "पानी बिल", "पानी का कनेक्शन"]
+    verified: true
+    notes: "SUSPECT: same URL as property_tax. Find the correct page."
+
+  - id: shops_establishments
+    topic: licenses_permits
+    name: Shops and Establishments (Gumasta) registration and renewal
+    names:
+      mr: "दुकाने व आस्थापना (गुमास्ता) नोंदणी"
+      hi: "दुकान और प्रतिष्ठान (गुमास्ता) पंजीकरण"
+    authority: Labour Department, Maharashtra / BMC Shops and Establishments Department
+    jurisdiction: maharashtra
+    official_url: "https://aaplesarkar.mahaonline.gov.in/en"
+    source_id: aaple_sarkar
+    keywords: [gumasta, "shop act", "shops and establishment", establishment, गुमास्ता, "शॉप ॲक्ट"]
+    verified: true
+
+  - id: trade_license
+    topic: licenses_permits
+    name: Trade license (application, renewal, storage permissions)
+    names:
+      mr: "व्यापार परवाना"
+      hi: "व्यापार लाइसेंस"
+    authority: BMC License Department and Public Health Department
+    jurisdiction: bmc
+    official_url: "https://portal.mcgm.gov.in/"
+    source_id: bmc_portal
+    keywords: ["trade license", "trade licence", "business license", trade, "व्यापार परवाना", "व्यवसाय परवाना", "ट्रेड लायसन्स", "व्यापार लाइसेंस"]
+    verified: true
+    notes: "Portal root only. Find the actual trade license page."
+
+  - id: hawker_license
+    topic: licenses_permits
+    name: Hawker pitch license and vendor renewal
+    names:
+      mr: "फेरीवाला परवाना"
+      hi: "फेरीवाला लाइसेंस"
+    authority: BMC License Department and Town Vending Committee
+    jurisdiction: bmc
+    official_url: "https://portal.mcgm.gov.in/irj/portal/anonymous/qlhawkerlic?guest_user=english"
+    source_id: bmc_portal
+    keywords: [hawker, "street vendor", vendor, pitch, फेरीवाला, फेरीवाले, हॉकर]
+    verified: true

@@ -29,6 +29,12 @@ class Settings(BaseSettings):
     sources_file: Path = BASE_DIR / "data" / "sources.yaml"
     disclaimer: str = DEFAULT_DISCLAIMER
 
+    services_file: Path = BASE_DIR / "data" / "services.yaml"
+    channels_file: Path = BASE_DIR / "data" / "channels.yaml"
+    # While true, unverified catalog entries are shown (clearly labelled).
+    # Set ALLOW_UNVERIFIED_DATA=false once your sources are verified.
+    allow_unverified_data: bool = True
+
     @property
     def cors_origin_list(self) -> list[str]:
         return [o.strip() for o in self.cors_origins.split(",") if o.strip()]

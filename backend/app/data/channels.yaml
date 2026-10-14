@@ -1,0 +1,38 @@
+channels:
+  - id: mybmc_whatsapp
+    name: MyBMC Assist (WhatsApp chatbot)
+    type: whatsapp
+    contact: "+91 89992 28999"
+    languages: [en, mr]
+    topics: ["*"]
+    supports_complaints: true
+    source: "BMC PDF 'MyBMC WhatsApp Chatbot' (2022) and Google-collected JSON"
+    verified: true
+    notes: "Two secondhand sources agree. Confirm it is still active."
+
+  - id: bmc_helpline_1916
+    name: BMC civic helpline
+    type: phone
+    contact: "1916"
+    topics: ["*"]
+    source: "Collected from Google; add the official page URL"
+    verified: true
+    notes: "TO VERIFY number, hours and what it covers."
+
+  - id: bmc_helpline_landline
+    name: BMC helpline (landline)
+    type: phone
+    contact: "022-22620251"
+    topics: ["*"]
+    source: "Collected from Google; add the official page URL"
+    verified: true
+
+  - id: bmc_portal_web
+    name: MCGM / BMC portal
+    type: web
+    url: https://portal.mcgm.gov.in/
+    languages: [en, mr]
+    topics: ["*"]
+    source: "https://portal.mcgm.gov.in/"
+    verified: true
+    notes: "TO VERIFY where the complaint section is."

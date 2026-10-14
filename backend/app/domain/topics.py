@@ -11,9 +11,14 @@ class Topic(BaseModel):
 
     id: str = Field(pattern=r"^[a-z][a-z0-9_]*$")
     name: str = Field(min_length=1)
+    names: dict[str, str] = Field(default_factory=dict)  # {"mr": ..., "hi": ...}
     description: str = Field(min_length=1)
     keywords: list[str] = Field(min_length=1)
+    complaint_enabled: bool = False
     example_questions: list[str] = Field(default_factory=list)
+
+    def display_name(self, lang: str) -> str:
+        return self.names.get(lang) or self.name
 
 
 class TopicRegistry:

@@ -19,3 +19,51 @@ sources:
     languages: [en, mr]
     verified: false
     notes: "TO VERIFY: that this host is currently official and what it serves."
+
+  # ALL UNVERIFIED. For each: confirm it is an official government site, read
+# robots.txt and terms, confirm the exact host, then set verified: true.
+sources:
+  - id: bmc_portal
+    name: MCGM / BMC portal
+    host: portal.mcgm.gov.in
+    path_prefixes: ["/"]
+    topics: ["*"]
+    languages: [en, mr]
+    verified: false
+    notes: "TO VERIFY. Narrow path_prefixes per topic once pages are confirmed."
+
+  - id: bmc_main_site
+    name: MCGM / BMC official website
+    host: www.mcgm.gov.in
+    path_prefixes: ["/"]
+    topics: ["*"]
+    languages: [en, mr]
+    verified: false
+    notes: "TO VERIFY: still in use, or redirects to the portal?"
+
+  - id: aaple_sarkar
+    name: Aaple Sarkar (Government of Maharashtra)
+    host: aaplesarkar.mahaonline.gov.in
+    path_prefixes: ["/"]
+    topics: [revenue_certificates, licenses_permits]
+    languages: [en, mr]
+    verified: false
+    notes: "State portal, not BMC. TO VERIFY official status and terms."
+
+  - id: mumbai_police
+    name: Mumbai Police
+    host: mumbaipolice.gov.in
+    path_prefixes: ["/"]
+    topics: [contacts_helplines]
+    languages: [en]
+    verified: false
+    notes: "TO VERIFY exact serving host (www or bare). Contacts only."
+
+  - id: mumbai_city_district
+    name: Mumbai City district website
+    host: mumbaicity.gov.in
+    path_prefixes: ["/"]
+    topics: [contacts_helplines]
+    languages: [en, mr]
+    verified: false
+    notes: "TO VERIFY which authority runs this and its exact host."

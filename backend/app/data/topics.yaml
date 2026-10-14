@@ -1,35 +1,93 @@
 topics:
   - id: solid_waste
     name: Solid waste / garbage collection
+    names: {mr: "घनकचरा / कचरा संकलन", hi: "ठोस कचरा / कचरा संग्रह"}
     description: Garbage collection, segregation rules, bulk waste, missed pickups.
-    keywords: [garbage, waste, trash, dustbin, collection, segregation, dumping]
+    complaint_enabled: true
+    keywords: [garbage, waste, trash, dustbin, collection, segregation, dumping, कचरा, "कचऱ्", kachra, kuda, कूड़ा]
     example_questions:
       - How do I report garbage that has not been collected?
 
   - id: roads_potholes
     name: Roads and potholes
+    names: {mr: "रस्ते आणि खड्डे", hi: "सड़कें और गड्ढे"}
     description: Pothole reporting and road repair information.
-    keywords: [pothole, road, footpath, pavement, repair, crater]
+    complaint_enabled: true
+    keywords: [pothole, road, footpath, pavement, repair, crater, खड्डा, खड्डे, रस्ता, "रस्त्", सड़क, गड्ढा, गड्ढे, khadda, rasta, sadak]
     example_questions:
       - How can I report a pothole on my street?
 
   - id: drainage
     name: Drainage
+    names: {mr: "गटारे आणि निचरा", hi: "नाली और जल निकासी"}
     description: Blocked drains, stormwater drains, waterlogging.
-    keywords: [drain, drainage, gutter, sewer, waterlogging, overflow, manhole]
+    complaint_enabled: true
+    keywords: [drain, drainage, gutter, sewer, waterlogging, overflow, manhole, गटार, नाला, नाली, मॅनहोल, gutar, nala]
     example_questions:
       - Who do I contact about a blocked drain?
 
   - id: water_supply
     name: Water supply
+    names: {mr: "पाणीपुरवठा", hi: "जल आपूर्ति"}
     description: Water supply issues, low pressure, contamination, billing basics.
-    keywords: [water, supply, tap, pressure, leakage, contaminated, pipeline]
+    complaint_enabled: true
+    keywords: [water, supply, tap, pressure, leakage, contaminated, pipeline, पाणी, पाणीपुरवठा, नळ, पानी, paani, pani]
     example_questions:
       - What can I do if my area has no water supply?
 
   - id: streetlights
     name: Streetlights
+    names: {mr: "पथदिवे", hi: "स्ट्रीटलाइट"}
     description: Non-working or damaged streetlights.
-    keywords: [streetlight, street light, lamp, pole, dark, lighting]
+    complaint_enabled: true
+    keywords: [streetlight, street light, street lamp, lamp, pole, dark, lighting, दिवा, दिवे, पथदिवे, स्ट्रीटलाइट, बत्ती]
     example_questions:
       - How do I report a broken streetlight?
+
+  - id: contacts_helplines
+    name: Contacts and helplines
+    names: {mr: "संपर्क आणि हेल्पलाइन", hi: "संपर्क और हेल्पलाइन"}
+    description: Official helplines, control rooms and ward contacts.
+    keywords: [contact, helpline, phone, control room, ward office, emergency, police, संपर्क, हेल्पलाइन]
+    example_questions:
+      - How do I contact my ward office?
+
+  - id: birth_death_certificates
+    name: Birth and death certificates
+    names: {mr: "जन्म व मृत्यू प्रमाणपत्र", hi: "जन्म और मृत्यु प्रमाणपत्र"}
+    description: Applying for, searching and downloading birth and death certificates.
+    keywords: [birth, death, born, janm, mrityu, जन्म, मृत्यू, मृत्यु]
+    example_questions:
+      - Where can I get a birth certificate?
+
+  - id: marriage_registration
+    name: Marriage registration
+    names: {mr: "विवाह नोंदणी", hi: "विवाह पंजीकरण"}
+    description: Registering a marriage and downloading the certificate.
+    keywords: [marriage, married, wedding, vivah, लग्न, विवाह]
+    example_questions:
+      - How do I register my marriage?
+
+  - id: revenue_certificates
+    name: Caste, income and domicile certificates
+    names: {mr: "जात, उत्पन्न व अधिवास दाखले", hi: "जाति, आय और निवास प्रमाणपत्र"}
+    description: State revenue certificates such as caste, income, domicile and non-creamy layer.
+    keywords: [caste, income certificate, domicile, nationality, creamy, solvency, "जातीचा दाखला", "जात प्रमाणपत्र", जाति, "उत्पन्नाचा दाखला", "उत्पन्न प्रमाणपत्र", "आय प्रमाण", अधिवास, डोमिसाइल]
+    example_questions:
+      - Where do I apply for a caste certificate?
+
+  - id: property_tax
+    name: Property tax
+    names: {mr: "मालमत्ता कर", hi: "संपत्ति कर"}
+    description: Property tax bills, payment, name change and related certificates.
+    keywords: [property tax, house tax, tax bill, mutation, "मालमत्ता कर", "संपत्ति कर", "संपत्ती कर"]
+    example_questions:
+      - How do I pay my property tax online?
+
+  - id: licenses_permits
+    name: Licenses and permits
+    names: {mr: "परवाने व परवानग्या", hi: "लाइसेंस और परमिट"}
+    description: Trade license, hawker license, and shops and establishments registration.
+    keywords: [license, licence, trade, hawker, vendor, gumasta, shop, establishment, परवाना, लाइसेंस, गुमास्ता, फेरीवाला]
+    example_questions:
+      - How do I get a trade license?
